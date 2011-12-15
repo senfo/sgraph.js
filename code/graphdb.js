@@ -9,7 +9,22 @@
 
 var GraphDb = Class.create();
 
-Graph.prototype = {
+GraphDb.prototype = {
 	initialize: function() {
+		this.nodes = [];
+		this.edges = [];
+	},
+
+	addNode: function(nodeId, nodeAttributes) {
+		var node = {
+			id: nodeId,
+			attributes: nodeAttributes
+		};
+
+		this.nodes.push(node);
+	},
+
+	addEdge: function(value) {
+		this.edges.push(value);
 	}
 };
