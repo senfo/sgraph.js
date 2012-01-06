@@ -24,7 +24,13 @@ GraphDb.prototype = {
 		this.nodes.push(node);
 	},
 
-	addEdge: function(value) {
-		this.edges.push(value);
+	addEdge: function(parentNodeId, targetNodeId, attributes) {
+		var edge = {
+			parentNodeId: parentNodeId,
+			targetNodeId: targetNodeId,
+			attributes: attributes
+		};
+
+		this.edges.push(edge);
 	}
 };
