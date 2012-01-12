@@ -22,11 +22,11 @@ function graphDb() {
     };
 }
 
-function node(nodeId, attributes) {
+function Node(nodeId, attributes) {
     this.nodeId = nodeId;
     this.attributes = attributes;
 }
 
-function edge(parentNodeId, targetNodeId, attributes) {
+function Edge(parentNodeId, targetNodeId, attributes) {
     this.parentNodeId = parentNodeId;
 }

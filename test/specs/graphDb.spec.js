@@ -2,11 +2,10 @@ EnvJasmine.load(EnvJasmine.jsDir + "/graphdb.js");
 
 describe("addNode", function () {
     it("Adds a node to the database", function () {
-        var node = new node(1, null);
+        var n = new Node(1, null);
 
-        graphDb.initialize();
-        graphDb.addNode(node);
+        graph.addNode(n);
 
-        expect(graphDb.nodes[0].nodeId).toEqual(1);
+        expect(graph.nodes[0].nodeId).toEqual(n.nodeId);
     });
 });
