@@ -7,35 +7,26 @@
  *
 /*--------------------------------------------------------------------------*/
 
-(function () {
-    "use strict";
+var graph = new graphDb();
 
-    var graphDb = new graphDb();
+function graphDb() {
+    this.nodes = [];
+    this.edges = [];
 
-    function graphDb() {
-    }
+    this.addNode = function (node) {
+        this.nodes.push(node);
+    };
 
-    function node(nodeId, attributes) {
-        this.nodeId = nodeId;
-        this.attributes = attributes;
-    }
+    this.addEdge = function (edge) {
+        this.edges.push(edge);
+    };
+}
 
-    function edge(parentNodeId, targetNodeId, attributes) {
-        this.parentNodeId = parentNodeId;
-    }
+function node(nodeId, attributes) {
+    this.nodeId = nodeId;
+    this.attributes = attributes;
+}
 
-    graphDb.prototype = {
-        initialize: function(eventInfo) {
-            this.nodes = [];
-            this.edges = [];
-        },
-
-        addNode: function(node) {
-            this.nodes.push(node);
-        },
-
-        addEdge: function(edge) {
-            this.edges.push(edge);
-        }
-    }
-})();
+function edge(parentNodeId, targetNodeId, attributes) {
+    this.parentNodeId = parentNodeId;
+}
